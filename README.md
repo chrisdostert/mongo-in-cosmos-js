@@ -40,9 +40,9 @@ yarn add mongo-in-cosmos
 ```
 
 # API
-All methods, if supported, are identical to the native mongoDb driver collection API.
+All implemented methods, are identical to the native mongoDb driver collection API.
 
-Each supported method is maintained in it's own file in [./collection](./collection) so reference it for a complete list.
+Each implemented method is maintained in it's own file in [./collection](./collection) so reference it for a complete list.
 
 # Examples
 
@@ -59,7 +59,7 @@ const cosmosCollection = client.db('my-cosmos-db').collection('my-cosmos-collect
 // access embedded collection
 const embeddedCollection = mongoInCosmos(cosmosCollection, 'my-embedded-collection')
 
-// use like native mongo driver collection (for supported methods)... :)
+// use like native mongo driver collection (for implemented methods)... :)
 await embeddedCollection.find({})
 ```
 

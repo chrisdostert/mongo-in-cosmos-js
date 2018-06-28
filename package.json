@@ -1,6 +1,6 @@
 {
   "name": "mongo-in-cosmos",
-  "version": "0.0.0-alpha.0",
+  "version": "0.0.0-alpha.1",
   "description": "Javascript library enabling use of a single cosmosDb collection as multiple mongoDb collections",
   "main": "index.js",
   "scripts": {
