@@ -14,17 +14,18 @@ const objectUnderTest = require('./index')
 
 describe('collection', () => {
   const cosmosCollection = 'cosmosCollection'
-  const collectionName = 'collectionName'
-  const result = objectUnderTest(cosmosCollection, collectionName)
+  const embeddedDbName = 'embeddedDbName'
+  const embeddedCollectionName = 'embeddedCollectionName'
+  const result = objectUnderTest(cosmosCollection, embeddedDbName, embeddedCollectionName)
 
   describe('result.find', () => {
-    it('should call find w/ expected args', async () => {
+    it('should call find w/ expected args', () => {
       /* arrange */
       const query = 'query'
       const options = 'options'
 
       /* act */
-      await result.find(
+      result.find(
         query,
         options
       )
@@ -33,20 +34,21 @@ describe('collection', () => {
       expect(find)
         .toBeCalledWith(
           cosmosCollection,
-          collectionName,
+          embeddedDbName,
+          embeddedCollectionName,
           query,
           options
         )
     })
   })
   describe('result.findOne', () => {
-    it('should call findOne w/ expected args', async () => {
+    it('should call findOne w/ expected args', () => {
       /* arrange */
       const query = 'query'
       const options = 'options'
 
       /* act */
-      await result.findOne(
+      result.findOne(
         query,
         options
       )
@@ -55,20 +57,21 @@ describe('collection', () => {
       expect(findOne)
         .toBeCalledWith(
           cosmosCollection,
-          collectionName,
+          embeddedDbName,
+          embeddedCollectionName,
           query,
           options
         )
     })
   })
   describe('result.insertOne', () => {
-    it('should call insertOne w/ expected args', async () => {
+    it('should call insertOne w/ expected args', () => {
       /* arrange */
       const doc = 'doc'
       const options = 'options'
 
       /* act */
-      await result.insertOne(
+      result.insertOne(
         doc,
         options
       )
@@ -77,21 +80,22 @@ describe('collection', () => {
       expect(insertOne)
         .toBeCalledWith(
           cosmosCollection,
-          collectionName,
+          embeddedDbName,
+          embeddedCollectionName,
           doc,
           options
         )
     })
   })
   describe('result.updateOne', () => {
-    it('should call updateOne w/ expected args', async () => {
+    it('should call updateOne w/ expected args', () => {
       /* arrange */
       const filter = 'filter'
       const update = 'update'
       const options = 'options'
 
       /* act */
-      await result.updateOne(
+      result.updateOne(
         filter,
         update,
         options
@@ -101,7 +105,8 @@ describe('collection', () => {
       expect(updateOne)
         .toBeCalledWith(
           cosmosCollection,
-          collectionName,
+          embeddedDbName,
+          embeddedCollectionName,
           filter,
           update,
           options

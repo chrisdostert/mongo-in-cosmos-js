@@ -1,12 +1,14 @@
 /**
  * Implements http://mongodb.github.io/node-mongodb-native/3.0/api/Collection.html#find
  * @param {object} cosmosCollection
+ * @param {string} embeddedDbName
  * @param {string} embeddedCollectionName
  * @param {object} query
  * @param {object} options
  */
-async function find (
+function find (
   cosmosCollection,
+  embeddedDbName,
   embeddedCollectionName,
   query,
   options
@@ -14,13 +16,15 @@ async function find (
   return cosmosCollection.find(
     {
       ...query,
-      _collection: { $eq: embeddedCollectionName }
+      _collection: { $eq: embeddedCollectionName },
+      _db: { $eq: embeddedDbName }
     },
     {
       ...options,
       projection: {
         ...options && options.projection,
-        _collection: false
+        _collection: false,
+        _db: false
       }
     }
   )

@@ -1,3 +1,10 @@
-const collection = require('./collection')
+const db = require('./db')
 
-module.exports = {collection}
+function mongoInCosmos (
+  cosmosCollection
+) {
+  return {
+    db: db.bind(this, cosmosCollection)
+  }
+}
+module.exports = mongoInCosmos

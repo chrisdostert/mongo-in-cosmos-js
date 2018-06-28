@@ -1,7 +1,7 @@
 {
   "name": "mongo-in-cosmos",
-  "version": "0.0.0-alpha.1",
-  "description": "Javascript library enabling use of a single cosmosDb collection as multiple mongoDb collections",
+  "version": "0.0.0-alpha.6",
+  "description": "Javascript library to embed an arbitrary number of mongoDb dbs/collections within a single cosmosDb collection",
   "main": "index.js",
   "scripts": {
     "test": "standard --fix && jest"

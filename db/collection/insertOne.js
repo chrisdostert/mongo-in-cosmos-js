@@ -1,20 +1,23 @@
 /**
  * Implements http://mongodb.github.io/node-mongodb-native/3.0/api/Collection.html#insertOne
  * @param {object} cosmosCollection
+ * @param {string} embeddedDbName
  * @param {string} embeddedCollectionName
  * @param {object} doc
  * @param {object} options
  */
-async function insertOne (
+function insertOne (
   cosmosCollection,
+  embeddedDbName,
   embeddedCollectionName,
   doc,
   options
 ) {
-  cosmosCollection.insertOne(
+  return cosmosCollection.insertOne(
     {
       ...doc,
-      _collection: embeddedCollectionName
+      _collection: embeddedCollectionName,
+      _db: embeddedDbName
     },
     options
   )
