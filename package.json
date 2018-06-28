@@ -1,0 +1,31 @@
+{
+  "name": "mongo-in-cosmos",
+  "version": "0.0.0-alpha.0",
+  "description": "Javascript library enabling use of a single cosmosDb collection as multiple mongoDb collections",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard --fix && jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisdostert/mongo-in-cosmos-js.git"
+  },
+  "keywords": [
+    "mongoDb",
+    "cosmosDb"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrisdostert/mongo-in-cosmos-js/issues"
+  },
+  "homepage": "https://github.com/chrisdostert/mongo-in-cosmos-js#readme",
+  "standard": {
+    "envs": [
+      "jest"
+    ]
+  },
+  "devDependencies": {
+    "jest": "^23.2.0",
+    "standard": "^11.0.1"
+  }
+}
